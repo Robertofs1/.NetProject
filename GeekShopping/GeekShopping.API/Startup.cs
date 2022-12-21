@@ -1,3 +1,5 @@
+using AutoMapper;
+using GeekShopping.API.Config;
 using GeekShopping.API.Model.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +33,10 @@ namespace GeekShopping.API
             services.AddDbContext<MySqlContext>(options => options.UseMySql(connection,
                 new MySqlServerVersion(
                     new Version(8, 0))));
+
+            IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+            services.AddSingleton(mapper);
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

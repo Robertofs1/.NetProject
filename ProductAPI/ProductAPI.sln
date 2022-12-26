@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductAPI", "ProductAPI.csproj", "{D9D189DC-7B81-43AF-974A-1D8B6C63DCDF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.Web", "..\GeekShopping.Web\GeekShopping.Web.csproj", "{8953CF69-A328-499A-BC7D-F1DE56927576}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9D189DC-7B81-43AF-974A-1D8B6C63DCDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9D189DC-7B81-43AF-974A-1D8B6C63DCDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9D189DC-7B81-43AF-974A-1D8B6C63DCDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9D189DC-7B81-43AF-974A-1D8B6C63DCDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8953CF69-A328-499A-BC7D-F1DE56927576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8953CF69-A328-499A-BC7D-F1DE56927576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8953CF69-A328-499A-BC7D-F1DE56927576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8953CF69-A328-499A-BC7D-F1DE56927576}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {628B212B-B2A1-4FD6-92AE-FA3F23C8A8FA}
+	EndGlobalSection
+EndGlobal

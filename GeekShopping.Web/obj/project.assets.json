@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\roberto.frisanco\\source\\repos\\Product\\GeekShopping.Web\\GeekShopping.Web.csproj",
+      "projectUniqueName": "C:\\Users\\roberto.frisanco\\source\\repos\\Shop\\GeekShopping.Web\\GeekShopping.Web.csproj",
       "projectName": "GeekShopping.Web",
-      "projectPath": "C:\\Users\\roberto.frisanco\\source\\repos\\Product\\GeekShopping.Web\\GeekShopping.Web.csproj",
+      "projectPath": "C:\\Users\\roberto.frisanco\\source\\repos\\Shop\\GeekShopping.Web\\GeekShopping.Web.csproj",
       "packagesPath": "C:\\Users\\roberto.frisanco\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\roberto.frisanco\\source\\repos\\Product\\GeekShopping.Web\\obj\\",
+      "outputPath": "C:\\Users\\roberto.frisanco\\source\\repos\\Shop\\GeekShopping.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\roberto.frisanco\\AppData\\Roaming\\NuGet\\NuGet.Config",

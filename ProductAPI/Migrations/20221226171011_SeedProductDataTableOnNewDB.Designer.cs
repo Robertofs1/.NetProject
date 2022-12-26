@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ProductAPI.Migrations
 {
     [DbContext(typeof(MySQLContext))]
-    [Migration("20221226125728_OnDataBase")]
-    partial class OnDataBase
+    [Migration("20221226171011_SeedProductDataTableOnNewDB")]
+    partial class SeedProductDataTableOnNewDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

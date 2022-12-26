@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\roberto.frisanco\\source\\repos\\Product\\ProductAPI\\ProductAPI.csproj": {}
+    "C:\\Users\\roberto.frisanco\\source\\repos\\Shop\\ProductAPI\\ProductAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\roberto.frisanco\\source\\repos\\Product\\ProductAPI\\ProductAPI.csproj": {
+    "C:\\Users\\roberto.frisanco\\source\\repos\\Shop\\ProductAPI\\ProductAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\roberto.frisanco\\source\\repos\\Product\\ProductAPI\\ProductAPI.csproj",
+        "projectUniqueName": "C:\\Users\\roberto.frisanco\\source\\repos\\Shop\\ProductAPI\\ProductAPI.csproj",
         "projectName": "ProductAPI",
-        "projectPath": "C:\\Users\\roberto.frisanco\\source\\repos\\Product\\ProductAPI\\ProductAPI.csproj",
+        "projectPath": "C:\\Users\\roberto.frisanco\\source\\repos\\Shop\\ProductAPI\\ProductAPI.csproj",
         "packagesPath": "C:\\Users\\roberto.frisanco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\roberto.frisanco\\source\\repos\\Product\\ProductAPI\\obj\\",
+        "outputPath": "C:\\Users\\roberto.frisanco\\source\\repos\\Shop\\ProductAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\roberto.frisanco\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProductAPI.Migrations
 {
-    public partial class OnDataBase : Migration
+    public partial class SeedProductDataTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

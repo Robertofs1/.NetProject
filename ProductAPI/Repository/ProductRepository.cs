@@ -23,14 +23,14 @@ namespace GeekShopping.ProductAPI.Repository
 
         public async Task<IEnumerable<ProductVO>> FindAll()
         {
-            List<Product> products = await _context.Products.ToListAsync();
+            List<Product> products = await _context.Product.ToListAsync();
             return _mapper.Map<List<ProductVO>>(products);
         }
 
         public async Task<ProductVO> FindById(long id)
         {
             Product product =
-                await _context.Products.Where(p => p.Id == id)
+                await _context.Product.Where(p => p.Id == id)
                 .FirstOrDefaultAsync();
             return _mapper.Map<ProductVO>(product);
         }
@@ -38,14 +38,14 @@ namespace GeekShopping.ProductAPI.Repository
         public async Task<ProductVO> Create(ProductVO vo)
         {
             Product product = _mapper.Map<Product>(vo);
-            _context.Products.Add(product);
+            _context.Product.Add(product);
             await _context.SaveChangesAsync();
             return _mapper.Map<ProductVO>(product);
         }
         public async Task<ProductVO> Update(ProductVO vo)
         {
             Product product = _mapper.Map<Product>(vo);
-            _context.Products.Update(product);
+            _context.Product.Update(product);
             await _context.SaveChangesAsync();
             return _mapper.Map<ProductVO>(product);
         }
@@ -55,10 +55,10 @@ namespace GeekShopping.ProductAPI.Repository
             try
             {
                 Product product =
-                await _context.Products.Where(p => p.Id == id)
+                await _context.Product.Where(p => p.Id == id)
                     .FirstOrDefaultAsync();
                 if (product == null) return false;
-                _context.Products.Remove(product);
+                _context.Product.Remove(product);
                 await _context.SaveChangesAsync();
                 return true;
             }

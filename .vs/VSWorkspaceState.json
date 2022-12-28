@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ProductAPI",
-    "\\ProductAPI\\Controllers"
+    "\\Services",
+    "\\Services\\ProductAPI"
   ],
-  "SelectedNode": "\\ProductAPI\\Controllers\\ProductController.cs",
+  "SelectedNode": "\\Services\\ProductAPI\\ProductAPI.sln",
   "PreviewInSolutionExplorer": false
 }

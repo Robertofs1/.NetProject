@@ -1,6 +1,9 @@
+using Duende.IdentityServer.Services;
 using GeekShopping.IdentityServer.Configuration;
-using GeekShopping.IndentityServer.ModelDB;
-using GeekShopping.ProductAPI.Model.Context;
+using GeekShopping.IdentityServer.Initializer;
+using GeekShopping.IdentityServer.Model;
+using GeekShopping.IdentityServer.Model.Context;
+using GeekShopping.IdentityServer.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -9,11 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace GeekShopping.IndentityServer
+namespace GeekShopping.IdentityServer
 {
     public class Startup
     {
@@ -33,26 +33,37 @@ namespace GeekShopping.IndentityServer
                 UseMySql(connection,
                         new MySqlServerVersion(
                             new Version(8, 0, 5))));
-            services.AddIdentity<ApplicationUser, IdentityRole>().
-            AddEntityFrameworkStores<MySQLContext>().
-            AddDefaultTokenProviders(); 
-            services.AddControllersWithViews();
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<MySQLContext>()
+                .AddDefaultTokenProviders();
 
             var builder = services.AddIdentityServer(options =>
-            {
-                options.Events.RaiseErrorEvents = true;
-                options.Events.RaiseInformationEvents = true;
-                options.Events.RaiseFailureEvents = true;
-                options.Events.RaiseSuccessEvents = true;
-                options.EmitStaticAudienceClaim = true;
-            }).AddInMemoryIdentityResources(IdentityConfiguration.IdentityResources)
-            .AddInMemoryClients(IdentityConfiguration.Clients)
-            .AddAspNetIdentity<ApplicationUser>();
+                {
+                    options.Events.RaiseErrorEvents = true;
+                    options.Events.RaiseInformationEvents = true;
+                    options.Events.RaiseFailureEvents = true;
+                    options.Events.RaiseSuccessEvents = true;
+                    options.EmitStaticAudienceClaim = true;
+                }).AddInMemoryIdentityResources(
+                        IdentityConfiguration.IdentityResources)
+                    .AddInMemoryApiScopes(IdentityConfiguration.ApiScopes)    
+                    .AddInMemoryClients(IdentityConfiguration.Clients)
+                    .AddAspNetIdentity<ApplicationUser>();
+
+            services.AddScoped<IDbInitializer, DbInitializer>();
+            services.AddScoped<IProfileService, ProfileService>();
+
             builder.AddDeveloperSigningCredential();
+
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, 
+            IWebHostEnvironment env,
+            IDbInitializer initializer
+        )
         {
             if (env.IsDevelopment())
             {
@@ -62,11 +73,14 @@ namespace GeekShopping.IndentityServer
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
             app.UseIdentityServer();
             app.UseAuthorization();
+
+            initializer.Initialize();
 
             app.UseEndpoints(endpoints =>
             {
